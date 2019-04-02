@@ -28,11 +28,12 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 ENV DEBIAN_FRONTEND noninteractive
 RUN yum -y update && \
     yum -y upgrade && \
-    yum -y install wget git bzip2 curl
+    yum -y install wget git bzip2 curl ping \
+    yum -y groupinstall "fonts"
 #RUN yum purge && \
 #    yum clean && \
 #    rm -rf /var/lib/apt/lists/*
-ENV LANG C.UTF-8
+ENV LANG zh_CN.utf8
 
 # install Python + NodeJS with conda
 RUN wget -q https://repo.continuum.io/miniconda/Miniconda3-4.5.1-Linux-x86_64.sh -O /tmp/miniconda.sh  && \
