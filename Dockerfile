@@ -28,10 +28,10 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get -y install wget git bzip2 && \
-    apt-get purge && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get -y install wget git bzip2
+#RUN apt-get purge && \
+#    apt-get clean && \
+#    rm -rf /var/lib/apt/lists/*
 ENV LANG C.UTF-8
 
 # install Python + NodeJS with conda
@@ -48,8 +48,8 @@ ENV PATH=/opt/conda/bin:$PATH
 ADD . /src/jupyterhub
 WORKDIR /src/jupyterhub
 
-RUN pip install . && \
-    rm -rf $PWD ~/.cache ~/.npm
+RUN pip install .
+RUN rm -rf $PWD ~/.cache ~/.npm
 
 RUN mkdir -p /srv/jupyterhub/
 WORKDIR /srv/jupyterhub/
