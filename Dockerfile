@@ -21,16 +21,16 @@
 # your jupyterhub_config.py will be added automatically
 # from your docker directory.
 
-FROM ubuntu:18.10
+FROM centos7
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 # install nodejs, utf8 locale, set CDN because default httpredir is unreliable
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -y update && \
-    apt-get -y upgrade && \
-    apt-get -y install wget git bzip2 curl
-#RUN apt-get purge && \
-#    apt-get clean && \
+RUN yum -y update && \
+    yum -y upgrade && \
+    yum -y install wget git bzip2 curl
+#RUN yum purge && \
+#    yum clean && \
 #    rm -rf /var/lib/apt/lists/*
 ENV LANG C.UTF-8
 
