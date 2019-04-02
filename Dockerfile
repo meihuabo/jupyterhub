@@ -21,7 +21,7 @@
 # your jupyterhub_config.py will be added automatically
 # from your docker directory.
 
-FROM centos7
+FROM centos
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 # install nodejs, utf8 locale, set CDN because default httpredir is unreliable
