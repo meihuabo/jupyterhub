@@ -49,7 +49,7 @@ ADD . /src/jupyterhub
 WORKDIR /src/jupyterhub
 
 RUN pip install .
-RUN rm -rf $PWD ~/.cache ~/.npm
+#RUN rm -rf $PWD ~/.cache ~/.npm
 
 RUN mkdir -p /srv/jupyterhub/
 WORKDIR /srv/jupyterhub/
