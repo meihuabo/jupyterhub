@@ -33,7 +33,7 @@ RUN yum -y update && \
 #RUN yum purge && \
 #    yum clean && \
 #    rm -rf /var/lib/apt/lists/*
-ENV LANG zh_CN.utf8
+ENV LANG en_GB.utf8
 
 # install Python + NodeJS with conda
 RUN wget -q https://repo.continuum.io/miniconda/Miniconda3-4.5.1-Linux-x86_64.sh -O /tmp/miniconda.sh  && \
